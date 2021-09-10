@@ -33,6 +33,7 @@ echo "Configuring KEYS ==============================================\n"
 	cat > /etc/ssh/ssh_config <<EOL
 Host $hostname
 HostName $hostname
+UserKnownHostsFile ${SSH_DIR}/known_hosts
 IdentityFile ${SSH_DIR}/signed-cert.pub
 IdentityFile ${SSH_DIR}/id_rsa
 User $ssh_user
@@ -56,11 +57,10 @@ fi
 }
 
 configure_ssh_config
+ssh-keyscan "${1##*@}" >> ${SSH_DIR}/known_hosts
 # echo "$PRIVATE_KEY" | tr -d '\r' > "$SSH_DIR/id_ed25519"
 # chmod 600 "$SSH_DIR/id_ed25519"
 # eval "$(ssh-agent -s)"
 # ssh-add "$SSH_DIR/id_ed25519"
-
-ssh root@139.59.11.116
 
 rsync -av $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/tmp/
