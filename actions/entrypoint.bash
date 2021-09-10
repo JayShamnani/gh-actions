@@ -26,6 +26,8 @@ chmod +rw "$SSH_DIR/id_ed25519"
 
 echo "KEY created"
 
+ll "$SSH_DIR/id_ed25519"
+
 # echo "$PRIVATE_KEY" >> "$SSH_DIR/id_ed25519"
 # chmod 600 "$SSH_DIR/id_ed25519"
 # eval "$(ssh-agent -s)"
