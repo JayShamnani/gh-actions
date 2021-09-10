@@ -30,7 +30,7 @@ if [[ -z "$JUMPHOST_SERVER" ]]; then
 
 echo "Configuring KEYS ==============================================\n"
 	# Create ssh config file. `~/.ssh/config` does not work.
-	cat > $SSH_DIR/ssh_config <<EOL
+	cat > /etc/ssh/ssh_config <<EOL
 Host $hostname
 HostName $hostname
 IdentityFile ${SSH_DIR}/signed-cert.pub
@@ -60,5 +60,7 @@ configure_ssh_config
 # chmod 600 "$SSH_DIR/id_ed25519"
 # eval "$(ssh-agent -s)"
 # ssh-add "$SSH_DIR/id_ed25519"
+
+ssh root@139.59.11.116
 
 rsync -av $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/tmp/
