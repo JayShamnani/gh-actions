@@ -14,4 +14,4 @@ jobs:
       - name: Deployment
         uses: "./actions/"
     env:
-      PRIVATE_KEY: ${{ secrets.SECRET_KEY }}
+      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
