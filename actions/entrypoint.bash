@@ -15,7 +15,7 @@ touch secretFile
 echo $PRIVATE_KEY >> secretFile
 
 
-# mkdir $HOME/.ssh
+mkdir $HOME/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
