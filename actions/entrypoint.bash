@@ -20,6 +20,8 @@ ssh-keygen -t rsa -b 4096 -C "GH-actions-ssh-dep    loy-key" -f "$HOME/.ssh/id_r
 function configure_ssh_config() {
 
 if [[ -z "$JUMPHOST_SERVER" ]]; then
+
+echo "Configuring KEYS ==============================================\n"
 	# Create ssh config file. `~/.ssh/config` does not work.
 	cat > /etc/ssh/ssh_config <<EOL
 Host $hostname
