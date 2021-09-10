@@ -58,6 +58,13 @@ fi
 
 configure_ssh_config
 ssh-keyscan "${1##*@}" >> ${SSH_DIR}/known_hosts
+
+
+cat ${SSH_DIR}/known_hosts
+
+cd ${SSH_DIR}
+
+ls
 # echo "$PRIVATE_KEY" | tr -d '\r' > "$SSH_DIR/id_ed25519"
 # chmod 600 "$SSH_DIR/id_ed25519"
 # eval "$(ssh-agent -s)"
