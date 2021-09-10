@@ -31,12 +31,9 @@ if [[ -z "$JUMPHOST_SERVER" ]]; then
 echo "Configuring KEYS ==============================================\n"
 	# Create ssh config file. `~/.ssh/config` does not work.
 	cat > /etc/ssh/ssh_config <<EOL
-Host $hostname
-HostName $hostname
+Host *
 UserKnownHostsFile ${SSH_DIR}/known_hosts
-IdentityFile ${SSH_DIR}/signed-cert.pub
 IdentityFile ${SSH_DIR}/id_rsa
-User $ssh_user
 EOL
 else
 	# Create ssh config file. `~/.ssh/config` does not work.
