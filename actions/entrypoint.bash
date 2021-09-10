@@ -4,6 +4,8 @@ apt update
 
 apt-get install -y rsync
 
+apt-get install -y ssh
+
 cd $GITHUB_WORKSPACE
 
 ls -al
@@ -12,7 +14,8 @@ touch secretFile
 
 echo $PRIVATE_KEY >> secretFile
 
-mkdir $HOME/.ssh
+
+# mkdir $HOME/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
