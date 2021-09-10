@@ -54,7 +54,7 @@ fi
 }
 
 configure_ssh_config
-ssh-keyscan "${1##*@}" >> ${SSH_DIR}/known_hosts
+ssh-keyscan root@139.59.11.116 >> ${SSH_DIR}/known_hosts
 
 
 cat ${SSH_DIR}/known_hosts
