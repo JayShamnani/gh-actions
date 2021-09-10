@@ -15,7 +15,7 @@ mkdir $HOME/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
-ssh-keygen -t rsa -b 4096 -C "GH-actions-ssh-dep    loy-key" -f "$HOME/.ssh/id_rsa" -N ""
+ssh-keygen -R $hostname -t rsa -b 4096 -C "GH-actions-ssh-dep    loy-key" -f "$HOME/.ssh/id_rsa" -N ""
 
 function configure_ssh_config() {
 
@@ -54,4 +54,4 @@ configure_ssh_config
 # eval "$(ssh-agent -s)"
 # ssh-add "$SSH_DIR/id_ed25519"
 
-rsync -avzhp $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/home/jayshamnani
+rsync -av $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/tmp/
