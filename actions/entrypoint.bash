@@ -2,6 +2,8 @@
 
 apt update
 
+apt-get install -y rsync
+
 cd $GITHUB_WORKSPACE
 
 ls -al
@@ -10,9 +12,7 @@ touch secretFile
 
 echo $PRIVATE_KEY >> secretFile
 
-apt-get install openssh-client -y
-
-apt-get install rsync -y
+mkdir $HOME/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
