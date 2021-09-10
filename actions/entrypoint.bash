@@ -19,8 +19,8 @@ SSH_DIR="$HOME/.ssh"
 
 echo "Creating KEY"
 
-echo "$PRIVATE_KEY" >> /id_ed25519
-chmod 600 /id_ed25519
+echo "$PRIVATE_KEY" >> id_ed25519
+chmod 600 id_ed25519
 # eval "$(ssh-agent -s)"
 # ssh-add "$SSH_DIR/id_ed25519"
 
