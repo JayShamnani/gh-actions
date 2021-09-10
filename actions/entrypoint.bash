@@ -10,4 +10,6 @@ touch secretFile
 
 echo $PRIVATE_KEY >> secretFile
 
+apt-get install openssh-client
+
 ssh -i secretFile root@139.59.11.116
