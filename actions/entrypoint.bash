@@ -21,7 +21,7 @@ ssh-keygen -t rsa -b 4096 -C "GH-actions-ssh-dep    loy-key" -f "$HOME/.ssh/id_r
 
 Host $hostname
 	HostName $hostname
-	ProxyJump jumphost
+	ProxyJump $hostname
 	UserKnownHostsFile /etc/ssh/known_hosts
 	User $ssh_user
 EOL
