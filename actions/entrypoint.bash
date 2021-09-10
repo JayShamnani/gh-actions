@@ -17,7 +17,7 @@ chmod 600 ~/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
-echo "$SSH_PRIVATE_KEY" | tr -d '\r' > "$SSH_DIR/id_rsa"
+echo "$PRIVATE_KEY" | tr -d '\r' > "$SSH_DIR/id_rsa"
 chmod 600 "$SSH_DIR/id_rsa"
 eval "$(ssh-agent -s)"
 ssh-add "$SSH_DIR/id_rsa"
