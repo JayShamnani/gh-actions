@@ -10,6 +10,7 @@ cd $GITHUB_WORKSPACE
 
 ls -al
 hostname=139.59.11.116
+ssh_user=root
 mkdir $HOME/.ssh
 
 SSH_DIR="$HOME/.ssh"
