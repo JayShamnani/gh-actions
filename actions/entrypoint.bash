@@ -17,9 +17,7 @@ chmod 600 ~/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
-ssh-keyscan 139.59.11.116 >> ${SSH_DIR}/known_hosts
-
-echo "$PRIVATE_KEY" | tr -d '\r' > "$SSH_DIR/id_ed25519"
+echo "$PRIVATE_KEY" >> "$SSH_DIR/id_ed25519"
 chmod 600 "$SSH_DIR/id_ed25519"
 eval "$(ssh-agent -s)"
 ssh-add "$SSH_DIR/id_ed25519"
