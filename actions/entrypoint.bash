@@ -31,4 +31,4 @@ echo "KEY created"
 # eval "$(ssh-agent -s)"
 # ssh-add "$SSH_DIR/id_ed25519"
 
-rsync -av $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/tmp/
+rsync -av -e "$SSH_DIR/id_ed25519" $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/tmp/
