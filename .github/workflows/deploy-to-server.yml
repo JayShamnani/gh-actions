@@ -1,0 +1,15 @@
+on: 
+  push:
+    branches:
+      - "main"
+
+name: deployment to server
+
+jobs:
+  deployment:
+    name: Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@2
+      - name: Deployment
+        uses: "./actions/"
