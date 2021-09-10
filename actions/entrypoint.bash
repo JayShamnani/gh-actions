@@ -26,8 +26,6 @@ chmod 600 id_ed25519
 
 echo "KEY created"
 
-cat id_ed25519
-
 ls -la id_ed25519
 
 # echo "$PRIVATE_KEY" >> "$SSH_DIR/id_ed25519"
