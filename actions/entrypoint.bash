@@ -2,9 +2,9 @@
 
 apt update
 
-apt-get install -y rsync
+apt-get install -y rsync >/dev/null
 
-apt-get install -y ssh
+apt-get install -y ssh >/dev/null
 
 cd $GITHUB_WORKSPACE
 
@@ -12,6 +12,8 @@ ls -al
 hostname=139.59.11.116
 ssh_user=root
 mkdir $HOME/.ssh
+
+chmod 600 ~/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
