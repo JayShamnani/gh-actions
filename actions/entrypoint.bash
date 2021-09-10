@@ -2,9 +2,9 @@
 
 apt update
 
-apt-get install -y rsync >/dev/null
+apt install -y rsync >/dev/null
 
-apt-get install -y ssh >/dev/null
+apt install -y ssh >/dev/null
 
 cd $GITHUB_WORKSPACE
 
@@ -17,7 +17,12 @@ chmod 600 ~/.ssh
 
 SSH_DIR="$HOME/.ssh"
 
-ssh-keygen -R $hostname -t rsa -b 4096 -C "GH-actions-ssh-dep    loy-key" -f "$HOME/.ssh/id_rsa" -N ""
+echo "Jump Server ==============================================\n"
+
+
+echo "$JUMPHOST_SERVER"
+
+ssh-keygen -t rsa -b 4096 -C "GH-actions-ssh-dep    loy-key" -f "$HOME/.ssh/id_rsa" -N ""
 
 function configure_ssh_config() {
 
