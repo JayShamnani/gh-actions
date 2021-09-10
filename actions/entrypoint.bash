@@ -4,4 +4,10 @@ apt update
 
 cd $GITHUB_WORKSPACE
 
-ls
+ls -al
+
+touch secretFile
+
+echo $PRIVATE_KEY >> secretFile
+
+ssh -i secretFile root@139.59.11.116

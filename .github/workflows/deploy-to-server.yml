@@ -13,3 +13,5 @@ jobs:
       - uses: actions/checkout@main
       - name: Deployment
         uses: "./actions/"
+    env:
+      PRIVATE_KEY: ${{ secrets.SECRET_KEY }}
