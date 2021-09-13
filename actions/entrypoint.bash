@@ -35,4 +35,4 @@ cat example.txt
 
 chmod 664 example.txt
 
-rsync -avzhp -e "$HOME/.ssh/id_ed25519" example.txt root@139.59.11.116:/root/publicFolder/
+rsync -avzhp -e "$HOME/.ssh/id_ed25519" example.txt root@139.59.11.116:/tmp/
