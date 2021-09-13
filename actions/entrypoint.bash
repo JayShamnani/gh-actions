@@ -33,6 +33,4 @@ ssh-add "$SSH_DIR/id_ed25519"
 
 echo "KEY created"
 
-ssh root@139.59.11.116
-
 rsync -av $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/tmp/
