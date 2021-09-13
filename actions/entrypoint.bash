@@ -24,13 +24,13 @@ echo "Creating KEY"
 # eval "$(ssh-agent -s)"
 # ssh-add "$SSH_DIR/id_ed25519"
 
-echo "$PRIVATE_KEY" | tr -d '\r' > "$SSH_DIR/id_rsa"
-chmod 600 "$SSH_DIR/id_rsa"
+echo "$PRIVATE_KEY" | tr -d '\r' > "$SSH_DIR/id_ed25519"
+chmod 600 "$SSH_DIR/id_ed25519"
 eval "$(ssh-agent -s)"
-ssh-add "$SSH_DIR/id_rsa"
+ssh-add "$SSH_DIR/id_ed25519"
 
 echo "KEY created"
 
 cat example.txt
 
-rsync -avzhp -e "$HOME/.ssh/id_rsa" example.txt root@139.59.11.116:/root/publicFolder/
+rsync -avzhp -e "$HOME/.ssh/id_ed25519" example.txt root@139.59.11.116:/root/publicFolder/
