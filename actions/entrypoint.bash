@@ -32,7 +32,7 @@ echo "KEY created"
 
 # echo "$PRIVATE_KEY" >> "$SSH_DIR/id_ed25519"
 chmod 600 "$SSH_DIR/id_ed25519"
-# eval "$(ssh-agent -s)"
-# ssh-add "$SSH_DIR/id_ed25519"
+eval "$(ssh-agent -s)"
+ssh-add "$SSH_DIR/id_ed25519"
 
 rsync -av $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/tmp/
