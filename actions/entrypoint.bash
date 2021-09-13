@@ -31,4 +31,6 @@ ssh-add "$SSH_DIR/id_rsa"
 
 echo "KEY created"
 
-rsync -avzhp $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/
+touch example.txt
+
+rsync -avzhp $GITHUB_WORKSPACE/example.txt root@139.59.11.116:/root/publicFolder/
