@@ -36,7 +36,7 @@ User root
 UserKnownHostsFile ${SSH_DIR}/known_hosts
 EOL
 
-ssh-keyscan "${1##*@}" >> ${SSH_DIR}/known_hosts
+ssh-keyscan "139.59.11.116" >> ${SSH_DIR}/known_hosts
 
 echo "KEY created"
 
