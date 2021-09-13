@@ -32,6 +32,7 @@ ssh-add "$SSH_DIR/id_ed25519"
 
 cat > /etc/ssh/ssh_config <<EOL
 Host *
+User root
 UserKnownHostsFile ${SSH_DIR}/known_hosts
 EOL
 
