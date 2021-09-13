@@ -29,6 +29,12 @@ chmod 600 "$SSH_DIR/id_ed25519"
 eval "$(ssh-agent -s)"
 ssh-add "$SSH_DIR/id_ed25519"
 
+
+cat > /etc/ssh/ssh_config <<EOL
+Host *
+UserKnownHostsFile ${SSH_DIR}/known_hosts
+EOL
+
 echo "KEY created"
 
 cat example.txt
